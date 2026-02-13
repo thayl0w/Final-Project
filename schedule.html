@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" class="theme-light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Buddy Planner - Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wireframe-shell">
+    <header class="topbar">
+      <a class="brand" href="dashboard.html" aria-label="Go to dashboard">
+        <div class="brand-icon" aria-hidden="true">SB</div>
+        <h1>Study Buddy Planner</h1>
+      </a>
+
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="schedule.html">Schedule</a>
+        <a href="resources.html">Resources</a>
+        <a href="settings.html">Settings</a>
+        <span class="user-badge" data-user-name></span>
+        <a href="#" data-logout>Logout</a>
+      </nav>
+
+      <label class="theme-switch" aria-label="Theme switch">
+        <input id="themeToggle" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <main class="settings-wrap">
+      <section class="card">
+        <div class="card-head">
+          <h2>Weekly Schedule</h2>
+          <button id="addScheduleQuickBtn" type="button">+ Add Study Block</button>
+        </div>
+
+        <form id="scheduleForm" class="schedule-form" novalidate>
+          <input id="scheduleTitle" type="text" placeholder="Session title" maxlength="80" required />
+          <select id="scheduleDay" required>
+            <option value="">Day</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+          <input id="scheduleTime" type="time" required />
+          <button type="submit">Save</button>
+        </form>
+
+        <div class="week-head" aria-label="Week days">
+          <span data-day="Monday">Mon</span><span data-day="Tuesday">Tue</span><span data-day="Wednesday">Wed</span><span data-day="Thursday">Thu</span><span data-day="Friday">Fri</span><span data-day="Saturday">Sat</span><span data-day="Sunday">Sun</span>
+        </div>
+        <div id="scheduleGrid" class="schedule-grid"></div>
+        <p class="settings-message">Tip: Click inside the grid to auto-fill day/time. Click a block to edit it.</p>
+
+        <ul id="scheduleList" class="schedule-list"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <section class="footer-cta">
+        <h3>Ready to improve your study flow?</h3>
+        <p>Join students using Study Buddy Planner to organize deadlines, focus better, and finish stronger.</p>
+        <a class="footer-cta-btn" href="dashboard.html">Open Dashboard</a>
+      </section>
+
+      <section class="footer-main">
+        <div class="footer-brand">
+          <h4>Study Buddy Planner</h4>
+          <p>Built for students who want simple planning, better focus sessions, and steady progress every week.</p>
+          <div class="footer-social" aria-label="Social media links">
+            <a class="social-link" href="#" aria-label="Instagram"><img src="assets/icons/social-instagram.svg" alt="" /></a>
+            <a class="social-link" href="#" aria-label="LinkedIn"><img src="assets/icons/social-linkedin.svg" alt="" /></a>
+            <a class="social-link" href="#" aria-label="YouTube"><img src="assets/icons/social-youtube.svg" alt="" /></a>
+            <a class="social-link" href="#" aria-label="X"><img src="assets/icons/social-x.svg" alt="" /></a>
+          </div>
+        </div>
+        <div class="footer-columns">
+          <div>
+            <h5>Product</h5>
+            <p>Task Manager</p>
+            <p>Pomodoro Timer</p>
+            <p>Weekly Schedule</p>
+          </div>
+          <div>
+            <h5>Resources</h5>
+            <p>Study Videos</p>
+            <p>Productivity Tips</p>
+            <p>Support Guide</p>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <p>support@studybuddyplanner.edu</p>
+            <p>Mon-Fri, 8am-5pm</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Study Buddy Planner. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="js/auth-guard.js"></script>
+  <script type="module" src="js/schedule-page.js"></script>
+</body>
+</html>
+
+
+
+
